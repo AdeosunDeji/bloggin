@@ -8,7 +8,6 @@ const validateSignup = (user) => {
     email: Joi.string().email().required(),
     password: Joi.string().required().min(6).max(16),
     phone: Joi.string().required(),
-    photo: Joi.string(),
   });
   return schema.validate(user);
 };

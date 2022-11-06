@@ -1,14 +1,14 @@
 const { errorResponse, handleError, successResponse } = require("../utils/responses");
 const models = require("../models");
 const { isEmpty } = require("lodash");
-const { readingTime } = require("../utils/read");
+// const { readingTime } = require("../utils/read");
 
 class PostController {
   static async createPost(req, res) {
     try {
       const { _id } = req.user;
       const { title, description, tags, post } = req.body;
-      const RT = readingTime(body);
+      // const RT = readingTime(body);
       const pst = await models.Post.create({
         title,
         description,
