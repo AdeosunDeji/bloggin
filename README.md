@@ -4,27 +4,46 @@ This is an api for a blog app
 
 Requirements
 Users should have a first_name, last_name, email, password e.t.c.
-A user should be able to sign up and sign in into the blog app
+
+A user should be able to sign up and sign in into the blog app.
+
 user can sign in and have jwt token that expires after an hour
+
 Logged in users can create a blog.
+
 Logged in and not logged in users can not get a list of published blogs created
+
 Logged in and not logged in users can get a published blog
+
 When a blog is created, it is in draft state
+
 The owner of the blog can update the state of the blog to published
+
  The owner of a blog can edit the blog in draft or published state
+ 
  The owner of the blog can to delete the blog in draft or published state
+ 
 The owner of the can get a list of their blogs. 
+
 Tests for all endpoints
 
 
 Setup
+
+
 Install NodeJS, mongodb
+
 pull this repo
+
 update env with example.env
+
 run npm run start
+
 Base URL
 https://bloggin.onrender.com
+
 Models
+
 User
 field	data_type	constraints
 id	string	required
