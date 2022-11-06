@@ -60,6 +60,7 @@ created_at	date	required
 state	draft, published	required,default:draft
 
 APIs
+
 Signup User
 Route: /register
 Method: POST
@@ -77,7 +78,9 @@ Success
     message: 'Account created successfully.',
     }
 }
+
 Login User
+
 Route: /login
 Method: POST
 Body:
@@ -85,6 +88,7 @@ Body:
   "password": "password",
   "email": 'adeosundeji2@gmail.com",
 }
+
 Responses
 Success
 
@@ -92,7 +96,9 @@ Success
     message: 'Login successful',
     token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzY0NGU2NDMyMTAyMGZmNzcyOGY5NTAiLCJlbWFpbCI6ImFkZW9zdW5kZWppMkBnbWFpbC5jb20iLCJwaG9uZSI6IjA4MDk3ODU2Mzk4IiwiaWF0IjoxNjY3NzQ4NzA0LCJleHAiOjE2Njc3NTIzMDR9.l-XGr0UxXL0tHthEHon2qulM4hhJMa3HaDKqOC4YrEI'
 }
+
 Create Blog
+
 Route: /
 Method: POST
 Header
@@ -107,7 +113,9 @@ Success
 {
     message: "Post created successfully"
 }
+
 Get blogs
+
 Route: /getAllPost
 Method: GET
 Header
@@ -120,6 +128,7 @@ Success
 }
 
 ...
+
 
 Contributor
 Adeosun Deji
