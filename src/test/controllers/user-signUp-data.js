@@ -1,28 +1,24 @@
 const user = {
-  firstName: "hope",
-  lastName: "Adeo",
-  email: "jide@hotmail.com",
-  password: "password",
-  phone: "080987574576"
+  firstName: "Yinka",
+  lastName: "Adeosun",
+  email: "adeosundeji@hotmail.com",
+  password: "adeosun",
+  phone: "08092046544"
 };
 const user2 = {
-  firstName: "Yinka",
-  password: "password",
+  lastName: "Jide",
+  email: "adeosunjide@ymail.com"
 };
 const user3 = {
-  username: "grace",
-  email: "garrasdy@gmail.com",
-  password: "123456",
-};
-const user4 = {
-  username: "anini",
-  email: "anini@gmail.com",
-  password: "123456",
+  firstName: "Adeosun",
+  lastName: "Deji",
+  email: "adeosundeji2@gmail.com",
+  password: "daniella",
+  phone: "080920824544"
 };
   
 module.exports = {
   user,
   user2,
   user3,
-  user4
 };
