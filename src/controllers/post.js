@@ -1,14 +1,13 @@
 const { errorResponse, handleError, successResponse } = require("../utils/responses");
 const models = require("../models");
 const { isEmpty } = require("lodash");
-// const { readingTime } = require("../utils/read");
+const { calculateReadingTime } = require("../utils/read");
 
 class PostController {
   static async createPost(req, res) {
     try {
       const { _id } = req.user;
       const { title, description, tags, post } = req.body;
-      // const RT = readingTime(body);
       const pst = await models.Post.create({
         title,
         description,
@@ -16,9 +15,9 @@ class PostController {
         post,
         author: `${req.user.firstName} ${req.user.lastName}`,
         user_id: _id,
-        // reading_time: RT
+        reading_time: calculateReadingTime(post)
       });
-      return successResponse(res, 200, "Post created.", pst);
+      return successResponse(res, 201, "Post created.", pst);
     } catch (error) {
       handleError(error, req);
       return errorResponse(res, 500, "Server error");
@@ -70,7 +69,7 @@ class PostController {
       if (!post) {
         return errorResponse(res, 404, "Post not found.");
       }
-      return successResponse(res, 200, "Post fetched successfully.", post);
+      return successResponse(res, 200, "Post fetched successfully.", post, reading_time);
     } catch (error) {
       handleError(error, req);
       return errorResponse(res, 500, "Server error");

@@ -10,6 +10,13 @@ const config = {
   APP_NAME: process.env.APP_NAME,
   MONGO_URL: process.env.MONGO_URL,
   JWT_KEY: process.env.JWT_KEY,
+  CLIENT_ID: process.env.CLIENT_ID,
+  CLIENT_SECRET: process.env.CLIENT_SECRET,
+  CALLBACK_URL: process.env.CALLBACK_URL,
+  SECRET: process.env.SECRET,
+  CLOUD_NAME: process.env.CLOUD_NAME,
+  API_KEY: process.env.API_KEY,
+  API_SECRET: process.env.API_SECRET,
 };
 
 const absentConfig = Object.entries(config)

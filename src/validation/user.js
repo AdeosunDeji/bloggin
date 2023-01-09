@@ -20,5 +20,14 @@ const validateLogin = (login) => {
   return schema.validate(login);
 };
 
+const validateUpdate = (user) => {
+  const schema = joi.object({
+    firstName: joi.string().min(2).max(255),
+    lastName: joi.string().min(2).max(255),
+    phone: joi.string().min(11).max(13),
+  });
+  return schema.validate(user);
+};
 
-module.exports = { validateSignup, validateLogin };
+
+module.exports = { validateSignup, validateLogin, validateUpdate };

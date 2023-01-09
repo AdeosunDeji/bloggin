@@ -6,7 +6,9 @@ const userSchema = new Schema(
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     password: { type: String, required: true },
+    photo: { type: String },
     phone: { type: String, required: true },
+    books: { type: Schema.Types.Array, default: [], ref: "Post" }
   }, { timestamps: true }
 );
 

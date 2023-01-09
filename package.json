@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/app.js",
     "start": "node src/app.js",
     "test": "mocha node ./src/test/index.js --timeout 1000000 --recursive --exit || true"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdeosunDeji/bloggin.git"
@@ -17,15 +18,21 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "chai-http": "^4.3.0",
+    "cloudinary": "^1.33.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.11.0",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
     "joi": "^17.7.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "luxon": "^3.1.0",
     "mongoose": "^6.7.1",
-    "nodemon": "^2.0.20",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "passport-google-oauth20": "^2.0.0",
     "pino": "^8.7.0"
   },
   "devDependencies": {
@@ -33,6 +40,7 @@
     "chai": "^4.3.6",
     "eslint": "^8.26.0",
     "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
     "sinon": "^14.0.1",
     "sinon-chai": "^3.7.0"
   },

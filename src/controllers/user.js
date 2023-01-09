@@ -60,6 +60,64 @@ class UserController {
     }
   }
 
+  static async uploadProfilePicture(req, res) {
+    try {
+      const { _id } = req.user;
+      const user = await models.User.findByIdAndUpdate(
+        _id,
+        { photo: req.file?.path },
+        { new: true }
+      ).select("-password");
+      return successResponse(res, 200, "Picture uploaded successfully", user);
+    } catch (error) {
+      handleError(error, req);
+      errorResponse(res, 500, "server error");
+    }
+  }
+ 
+  static async getAllUsers(req, res) {
+    try {
+      const users = await models.User.find({});
+      return successResponse(res, 200, "All users", users);
+    } catch (error) {
+      handleError(error, req);
+      errorResponse(res, 500, "server error");
+    }
+  }
+
+  static async getUserById(req, res) {
+    try {
+      const { id } = req.params;
+      const user = await models.User.findById(id);
+      return successResponse(res, 200, "User fetched successfully", user);
+    } catch (error) {
+      handleError(error, req);
+      errorResponse(res, 500, "server error");
+    }
+  }
+
+  static async updateUser(req, res) {
+    try {
+      const { id } = req.params;
+      const user = await models.User.findByIdAndUpdate(id, req.body, { new: true });
+      return successResponse(res, 200, "User updated successfully", user);
+    } catch (error) {
+      handleError(error, req);
+      errorResponse(res, 500, "server error");
+    }
+  }
+
+  static async deleteUser(req, res) {
+    try {
+      const { id } = req.params;
+      const user = await models.User.findByIdAndDelete(id);
+      return successResponse(res, 200, "User Deleted successfully", user);
+    } catch (error) {
+      handleError(error, req);
+      errorResponse(res, 500, "server error");
+    }
+  }
+
 
 }
 
